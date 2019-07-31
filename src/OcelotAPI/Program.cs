@@ -19,6 +19,10 @@ namespace OcelotAPI
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext,config)=>
+        {
+                 config.AddJsonFile("configuration.json");
+        })
                 .UseStartup<Startup>()
                 .Build();
     }

@@ -3,13 +3,18 @@
     {
       "DownstreamPathTemplate": "/api/{version}/{everything}",
       "DownstreamScheme": "http",
-      "DownstreamHost": "localhost",
-      "DownstreamPort": 5101,
-      "UpstreamPathTemplate": "/api/catalog/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5101
+        }
+      ],
+      "UpstreamPathTemplate": "/api/{version}/c/{everything}",
       "UpstreamHttpMethod": [ "Get" ]
     }
   ],
   "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:51532",
     "RequestIdKey": "OcRequestId",
     "AdministrationPath": "/administration"
   }
