@@ -59,6 +59,7 @@ namespace IntegrationTests.Services.Basket
             var loggerFactory = new LoggerFactory();            
             var basketSettings = new BasketSettings() { ConnectionString = "127.0.0.1" };
             _optionsMock.Setup(x => x.Value).Returns(basketSettings);
+ 
             
             return new RedisBasketRepository(_optionsMock.Object, loggerFactory);
         }

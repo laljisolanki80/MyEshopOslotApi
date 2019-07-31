@@ -92,9 +92,12 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.Model
         private async Task ConnectToRedisAsync()
         {  
             var configuration = ConfigurationOptions.Parse(_settings.ConnectionString, true);
-            configuration.ResolveDns = true;     
-            
+            configuration.ResolveDns = true;
+            configuration.AllowAdmin = true;
+            //var options = ConfigurationOptions.Parse("server:6379");
+
             _logger.LogInformation($"Connecting to database {configuration.SslHost}.");
+            
             _redis = await ConnectionMultiplexer.ConnectAsync(configuration);
         }
     }

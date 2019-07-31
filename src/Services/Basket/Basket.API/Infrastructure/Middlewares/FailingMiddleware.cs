@@ -44,7 +44,7 @@ namespace Basket.API.Infrastructure.Middlewares
 
             if (enable && disable)
             {
-                throw new ArgumentException("Must use enable or disable querystring values, but not both");
+                throw new ArgumentException("Must use enable or disable query string values, but not both");
             }
 
             if (disable)

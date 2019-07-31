@@ -15,7 +15,7 @@ namespace Microsoft.eShopOnContainers.WebMVC.ViewModels.Annotations
                 return false;
 
             var monthString = value.ToString().Split('/')[0];
-            var yearString = $"{value.ToString().Split('/')[1]}";
+            var yearString = $"20{value.ToString().Split('/')[1]}";
             // Use the 'out' variable initializer to simplify 
             // the logic of validating the expiration date
             if ((int.TryParse(monthString, out var month)) &&
