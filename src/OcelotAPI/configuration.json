@@ -11,8 +11,34 @@
       ],
       "UpstreamPathTemplate": "/api/{version}/c/{everything}",
       "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/{version}/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5103
+        }
+      ],
+      "UpstreamPathTemplate": "/api/{version}/b/{everything}",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/api/{version}/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5102
+        }
+      ],
+      "UpstreamPathTemplate": "/api/{version}/o/{everything}",
+      "UpstreamHttpMethod": []
     }
   ],
+ 
+
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:51532",
     "RequestIdKey": "OcRequestId",
